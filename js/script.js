@@ -121,6 +121,11 @@ if (lightbox instanceof HTMLDialogElement && lightboxImage instanceof HTMLImageE
       lightbox.close();
     }
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.open) {
+      lightbox.close();
+    }
+  });
   lightbox.addEventListener("close", () => {
     lightboxImage.removeAttribute("src");
     lightboxImage.alt = "";
